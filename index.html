@@ -1,82 +1,377 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Courses by Arun-Kaushik</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="inferenceHW/hw4 : Course materials for the Data Science Specialization: https://www.coursera.org/specialization/jhudatascience/1" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>inferenceHW/hw4</title>
   </head>
+
   <body>
 
-      <header>
-        <h1>Courses</h1>
-        <p>Course materials for the Data Science Specialization: https://www.coursera.org/specialization/jhudatascience/1</p>
-      </header>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Arun-Kaushik/courses">View on GitHub</a>
 
-      <div id="banner">
-        <span id="logo"></span>
+          <h1 id="project_title">inferenceHW/hw4</h1>
+          <h2 id="project_tagline">Course materials for the Data Science Specialization: https://www.coursera.org/specialization/jhudatascience/1</h2>
 
-        <a href="https://github.com/Arun-Kaushik/courses" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/Arun-Kaushik/courses/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/Arun-Kaushik/courses/tarball/master" class="button">TAR</a></li>
-          </ul>
-        </div>
-      </div><!-- end banner -->
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Arun-Kaushik/courses/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Arun-Kaushik/courses/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <hr><p>title       : Homework 4 for Stat Inference
+subtitle    : Extra problems for Stat Inference
+author      : Brian Caffo
+job         : Johns Hopkins Bloomberg School of Public Health
+framework   : io2012
+highlighter : highlight.js<br>
+hitheme     : tomorrow       </p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<h1>
+<a name="url" class="anchor" href="#url"><span class="octicon octicon-link"></span></a>url:</h1>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h1>
+<a name="lib-librariesnew-remove-new-if-using-old-slidify" class="anchor" href="#lib-librariesnew-remove-new-if-using-old-slidify"><span class="octicon octicon-link"></span></a>lib: ../../librariesNew #Remove new if using old slidify</h1>
+
+<h1>
+<a name="assets-assets" class="anchor" href="#assets-assets"><span class="octicon octicon-link"></span></a>assets: ../../assets</h1>
+
+<p>widgets     : [mathjax, quiz, bootstrap]</p>
+
+<h2>
+<a name="mode---------selfcontained--standalone-draft" class="anchor" href="#mode---------selfcontained--standalone-draft"><span class="octicon octicon-link"></span></a>mode        : selfcontained # {standalone, draft}</h2>
+
+<h2>
+<a name="about-these-slides" class="anchor" href="#about-these-slides"><span class="octicon octicon-link"></span></a>About these slides</h2>
+
+<ul>
+<li>These are some practice problems for Statistical Inference Quiz 4</li>
+<li>They were created using slidify interactive which you will learn in 
+Creating Data Products</li>
+<li>Please help improve this with pull requests here
+(<a href="https://github.com/bcaffo/courses">https://github.com/bcaffo/courses</a>)</li>
+</ul><p>--- &amp;multitext
+Load the data set <code>mtcars</code> in the <code>datasets</code> R package. You want
+to test whether the MPG is $\mu_0$ or smaller using a one sided
+5% level test. ($H_0 : \mu = \mu_0$ versus $H_a : \mu &lt; \mu_0$).
+Using that data set and a Z test:</p>
+
+<ol>
+<li>what is the smallest value of $\mu_0$ that you would reject for?</li>
+</ol><p>Both to two decimal places.</p>
+
+<p>*** .hint
+This is the inversion of a one sided hypothesis test. It yields confidence
+bounds. (Note inverting a two sidded test yields confidence intervals.) 
+Think about the derivation of the confidence interval.</p>
+
+<p>*** .explanation
+We want to solve 
+$$
+\frac{\sqrt{n}(\bar{X} - \mu_0)}{s} = Z_{0.05}
+$$
+Or $$\mu_0 = \bar{X} - Z_{0.05} s / \sqrt{n} = \bar{X} + Z_{0.95} s / \sqrt{n}$$. Note that the quantile is negative.</p>
+
+<div class="highlight highlight-r"><pre><span class="c">mn &lt;- mean(mtcars$mpg); s &lt;- sd(mtcars$mpg); z &lt;- qnorm(.05)</span>
+<span class="c">mu0 &lt;- mn - z * s / sqrt(nrow(mtcars))</span>
+</pre></div>
+
+<p>Note, it's easy to get tripped up in this problem on signs. If you get a value
+that's less than $\bar X$, then clearly it's wrong, since you'd never reject for
+$H_0:\mu = \mu_0$ versus $H_a : \mu &lt; \mu_0$ if $\mu_0$ was less than your observed mean.
+Also note the answer to "What is the largest value for which you would reject for?" is
+infinity.</p>
+
+<p>21.84</p>
+
+<p>--- &amp;multitext
+Consider again the <code>mtcars</code> dataset. Use a two group t-test to test
+the hypothesis that the 4 and 6 cyl cars have the same mpg.  Use
+a two sided test with unequal variances.</p>
+
+<ol>
+<li>Do you reject at the 5% level (enter 0 for no, 1 for yes).</li>
+<li>What is the P-value to 4 decimal places expressed as a proportion?</li>
+</ol><p>*** .hint
+Use <code>t.test</code> with the options <code>var.equal=FALSE</code>, <code>paired=FALSE</code>,  <code>altnernative</code> as <code>two.sided</code>. </p>
+
+<p>*** .explanation</p>
+
+<div class="highlight highlight-r"><pre><span class="c">m4 &lt;- mtcars$mpg[mtcars$cyl == 4]</span>
+<span class="c">m6 &lt;- mtcars$mpg[mtcars$cyl == 6]</span>
+<span class="c">p &lt;- t.test(m4, m6, paired = FALSE, alternative="two.sided", var.equal=FALSE)$p.value</span>
+</pre></div>
+
+<p>The answer to 1. is 1 <br>
+The answer to 2. is 4e-04</p>
+
+<p>--- &amp;multitext
+A sample of 100 men yielded an average PSA level of 3.0 with a sd of 1.1. What
+are the complete set of values that a 5% two sided Z test of $H_0 : \mu = \mu_0$ 
+would reject the null hypothesis for?</p>
+
+<ol>
+<li>Enter the lower value to 2 decimal places.</li>
+<li>Enter the upper value to 2 decimal places. </li>
+</ol><p>*** .hint
+This is equivalent to the confidence interval.</p>
+
+<p>*** .explanation
+The answer to 1 is
+ 2.78<br>
+The answer to 2 is 2.78</p>
+
+<p>--- &amp;multitext
+You believe the coin that you're flipping is biased towards heads. You get 55 heads out of 
+100 flips. </p>
+
+<ol>
+<li>What's the exact relevant pvalue to 4 decimal places (expressed as a proportion)?</li>
+<li>Would you reject a 1 sided hypothesis at $\alpha = .05$? (0 for no 1 for yes)?</li>
+</ol><p>*** .hint
+Use <code>pbinom</code> for a hypothesis that $p=.5$ veruss $p&gt;.5$ where $p$ is the binomial success
+probability.</p>
+
+<p>*** .explanation
+Note you have to start at 54 as it <code>lower.tail = FALSE</code> gives the strictly greater than
+probabilities</p>
+
+<div class="highlight highlight-r"><pre><span class="c">ans &lt;- round(pbinom(54, prob = .5, size = 100, lower.tail = FALSE),4)</span>
+</pre></div>
+
+<p>The answer to 1 is 0.1841<br>
+The answer to 2 is 0<br></p>
+
+<p>--- &amp;multitext</p>
+
+<p>A web site was monitored for a year and it received 520 hits per day. In the first
+30 days in the next year, the site received 15,800 hits. Assuming that web hits
+are Poisson.</p>
+
+<ol>
+<li>Give an exact one sided P-value to the hypothesis that web hits are up this year over last
+to four significant digits (expressed as a proportion).</li>
+<li>Does the one sided test reject (0 for no 1 for yes)?</li>
+</ol><p>*** .hint
+Consider using <code>ppois</code> with $\lambda=520 * 30$.  Note this is nearly exactly Gaussian, 
+so one could get away with the Gaussian calculation.</p>
+
+<p>*** .explanation
+This test comes with the important assumption that web hits are a Poisson process.</p>
+
+<div class="highlight highlight-r"><pre><span class="c">pv &lt;- ppois(15800 - 1, lambda = 520 * 30, lower.tail = FALSE)</span>
+</pre></div>
+
+<p>The answer to 1 is 0.0553<br>
+The answer to 2 is 0<br></p>
+
+<p>Also, compare with the Gaussian approximation where $\hat \lambda  \sim N(\lambda, \lambda / t)$</p>
+
+<div class="highlight highlight-r"><pre><span class="c">pnorm(15800 / 30, mean = 520, sd = sqrt(520 / 30), lower.tail = FALSE)</span>
+</pre></div>
+
+<pre><code>[1] 0.05466
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>As $t\rightarrow \infty$ this becomes more Gaussian. The approximation is pretty good for this
+setting.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>--- &amp;multitext</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Suppose that in an AB test, one advertising scheme led to an average of 10 purchases per day for a sample of 100 days, while the other led to 11 purchaces per day, also for a sample of 100 days.
+Assuming a common standard deviation of 4 purchaces per day.
+Assuming that the groups are independent and that they days are iid, perform a Z test of
+equivalence. </p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<ol>
+<li>What is the P-value reported to 3 digits expressed as a proportion?</li>
+<li>Do you reject the test? (O for no 1 for yes).</li>
+</ol><p>*** .hint
+The standard error is 
+$$
+s \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
+$$</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>*** .explanation</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<div class="highlight highlight-r"><pre><span class="c">m1 &lt;- 10; m2 &lt;- 11</span>
+<span class="c">n1 &lt;- n2 &lt;- 100</span>
+<span class="c">s &lt;- 4</span>
+<span class="c">se &lt;- s * sqrt(1 / n1 + 1 / n2)</span>
+<span class="c">ts &lt;- (m2 - m1) / se</span>
+<span class="c">pv &lt;- 2 * pnorm(-abs(ts))</span>
+</pre></div>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>The answer to 1 is 0.077<br>
+The answer to 2 is 0</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<p>--- &amp;radio</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>A confidence interval for the mean contains:</p>
+
+<ol>
+<li><em>All of the values of the hypothesized mean for which we would fail to reject with 
+$\alpha = 1 - Conf. Level$.</em></li>
+<li>All of the values of the hypothesized mean for which we would fail to reject with 
+$2 \alpha = 1 - Conf. Level$.</li>
+<li>All of the values of the hypothesized mean for which we would reject with 
+$\alpha = 1 - Conf. Level$.</li>
+<li>All of the values of the hypothesized mean for which we would fail to reject with 
+$2 \alpha = 1 - Conf. Level$.</li>
+</ol><p>*** .hint
+This is directly from the notes. Note that a confidence interval gives
+values of $\mu$ that are supported by the data whereas a test rejects
+for values of $\mu$ different from $\mu_0$. </p>
+
+<p>*** .explanation
+The only complicated part of this is the 2. Note that a 95% interval corresponds
+to a 5% level two sided test. So it's $\alpha = 1 - Conf.Level$. The confusion is that
+for both the two sided test and confidence interval, one needs to calculate
+$Z_{1 - \alpha / 2}$ (or the relevant T quantile).</p>
+
+<p>--- &amp;multitext
+Consider two problems previous. Assuming that 10 purchases per day is a benchmark null value, 
+that days are iid and that the standard deviation is 4 purchases for day. Suppose that you
+plan on sampling 100 days. What would be the power for a one sided 5% 
+Z mean test that purchases per day
+have increased under the alternative of $\mu = 11$ purchase per day?</p>
+
+<ol>
+<li>Give your result as a proportion to 3 decimal places.</li>
+</ol><p>*** .hint
+Under $H_0$ $\bar X \sim N(10, .4)$. Under $H_a$ $\bar X \sim N(11, .4)$. We reject
+when $\bar X \geq 10 + Z_{.95} .4$.</p>
+
+<p>*** .explanation
+The hint prettty much gives it away.</p>
+
+<div class="highlight highlight-r"><pre><span class="c">power &lt;- pnorm(10 + qnorm(.95) * .4, mean = 11, sd = .4, lower.tail = FALSE)</span>
+</pre></div>
+
+<p>The answer is 0.804</p>
+
+<p>--- &amp;multitext
+Researchers would like to conduct a study of healthy adults to detect a four year mean brain volume loss of .01 mm3. Assume that the standard deviation of four year volume loss in this population is .04 mm3. </p>
+
+<ol>
+<li>What is necessary sample size for the study for a 5% one sided test versus a null hypothesis of no volume loss to acheive 80% power? (Always round up)</li>
+</ol><p>*** .hint
+Under $H_0$ $\bar X$ is $N(0, .05 / \sqrt{n})$ and is $N(.01, .05 / \sqrt{n})$ under $H_a$. 
+We will reject if 
+$$
+\bar X \geq  Z_{.95} s / sqrt{n}
+$$ 
+which has probability 0.05 under $H_0$. Under $H_a$ it has probability
+$$
+P\left( \frac{\bar X - 0.01}{s / \sqrt{n}} \geq  \frac{.01}{s / \sqrt{n}} + z_{.95} \right)
+= P\left( Z \geq \frac{.01}{s / \sqrt{n}} + z_{.95}\right)
+$$</p>
+
+<p>*** .explanation
+Looking at the hint we set
+$$
+\frac{.01}{s / \sqrt{n}} + z_{.95} = z_{.2}
+$$
+$$
+n = \frac{(z_{.95} - z_{.2})^2 s^2}{.01^2} = \frac{ (z_{.95} + z_{.8})^2 s^2}{.01^2}
+$$
+So we get</p>
+
+<div class="highlight highlight-r"><pre><span class="c">n &lt;- (qnorm(.95) + qnorm(.8)) ^ 2 * .04 ^ 2 / .01^2</span>
+</pre></div>
+
+<p>The answer is 99</p>
+
+<p>--- &amp;radio</p>
+
+<p>In a court of law, all things being equal, if via policy you require a lower
+standard of evidence to convict people then</p>
+
+<ol>
+<li>Less guilty people will be convicted.</li>
+<li><em>More innocent people will be convicted.</em></li>
+<li>More Innocent people will be not convicted.</li>
+</ol><p>*** .hint
+Think about it.</p>
+
+<p>*** .explanation
+If you require less evidence to convict, then you will convict more people, guilty and
+innocent. Relate this property back to hypothesis tests.</p>
+
+<p>--- &amp;multitext
+Consider the <code>mtcars</code> data set. </p>
+
+<ol>
+<li>Give the p-value for a t-test for assuming 
+constant variance comparing MPG for 6 and 8 cylinder cars as a proportion to 3 decimal places.</li>
+<li>Give the associated P-value for a z test.</li>
+<li>Give the common standard deviation estimate for MPG across cylinders to 3 decimal places.</li>
+<li>Would the t test reject at the two sided 0.05 level (0 for no 1 for yes)?</li>
+</ol><p>*** .hint</p>
+
+<div class="highlight highlight-r"><pre><span class="c">mpg8 &lt;- mtcars$mpg[mtcars$cyl == 8]</span>
+<span class="c">mpg6 &lt;- mtcars$mpg[mtcars$cyl == 6]</span>
+<span class="c">m8 &lt;- mean(mpg8); m6 &lt;- mean(mpg6)</span>
+<span class="c">s8 &lt;- sd(mpg8); s6 &lt;- sd(mpg6)</span>
+<span class="c">n8 &lt;- length(mpg8); n6 &lt;- length(mpg6)</span>
+</pre></div>
+
+<p>*** .explanation</p>
+
+<div class="highlight highlight-r"><pre><span class="c">p &lt;- t.test(mpg8, mpg6, paired = FALSE, alternative="two.sided", var.equal=TRUE)$p.value</span>
+<span class="c">mixprob &lt;- (n8 - 1) / (n8 + n6 - 2)</span>
+<span class="c">s &lt;- sqrt(mixprob * s8 ^ 2  +  (1 - mixprob) * s6 ^ 2)</span>
+<span class="c">z &lt;- (m8 - m6) / (s * sqrt(1 / n8 + 1 / n6))</span>
+<span class="c">pz &lt;- 2 * pnorm(-abs(z))</span>
+<span class="c">## Hand calculating the T just to check</span>
+<span class="c">#2 * pt(-abs(z), df = n8 + n6 - 2)</span>
+</pre></div>
+
+<ol>
+<li>0 <br>
+</li>
+<li>0<br>
+</li>
+<li>2.27<br>
+</li>
+<li>1</li>
+</ol><p>--- &amp;radio
+The Bonferonni correction controls this</p>
+
+<ol>
+<li>False discovery rate</li>
+<li><em>The familywise error rate</em></li>
+<li>The rate of true rejections</li>
+<li>The number of true rejections</li>
+</ol><p>*** .hint
+This is pretty much straight out of the notes</p>
+
+<p>*** .explanation
+The Bonferonni correction is the classic correction for the familywise error rate.</p>
       </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/Arun-Kaushik">Arun-Kaushik</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">inferenceHW/hw4 maintained by <a href="https://github.com/Arun-Kaushik">Arun-Kaushik</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
+
   </body>
 </html>
